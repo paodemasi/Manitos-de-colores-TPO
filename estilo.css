@@ -1,0 +1,536 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    min-width: 100vh;
+    box-sizing: border-box;
+}
+
+#menu {
+    background-color: pink;
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    grid-template-rows: repeat(2, 150px);
+    justify-content: center;
+    align-content: center;
+    grid-template-areas:
+        "inicio inicio nosotros nosotros"
+        "inicio inicio ubicacion contacto";
+}
+
+#menu .tile {
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#menu .tile a {
+    text-decoration: none;
+}
+
+#menu .tile .front {
+    color: white;
+    background-color: rgb(228, 117, 136);
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+
+    background-size: cover;
+    background-position: center center;
+    
+    transition: all 0.3s ease;
+}
+
+
+#menu .tile .back {
+    background-color: pink;
+    color: white;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+#menu .tile:hover .front {
+    margin-top: -100%;
+}
+
+#menu .nosotros-tile:hover .front {
+    margin-top: -50%;
+}
+
+#menu .inicio-tile .front {
+    background-image: url(imagenes/mainfoto.jpg);
+}
+
+#menu .nosotros-tile .front {
+    background-image: url(imagenes/nosotros.jpg);
+}
+
+#menu .ubicacion-tile .front {
+    background-image: url(imagenes/screen-0-como\ llegar.webp)}
+
+#menu .contacto-tile .front {
+    background-image: url(imagenes/menu-wtsapp.jpg);
+}
+
+.inicio-tile {
+    grid-area: inicio;
+}
+
+.nosotros-tile {
+    grid-area: nosotros;
+}
+
+
+/* -----------------------------------*/
+
+#seccion {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+#seccion .tile {
+    border-radius: 10px;
+    padding: 40px;
+    box-sizing: border-box;
+
+    background-color: #eee;
+
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    font-size: 1.5em;
+
+}
+
+#seccion .tile img {
+    width: 70%;
+}  
+
+#seccion .tile-1 {
+    grid-column: 1 / 2;
+}
+
+#seccion .tile-2 {
+   grid-column: 2 / 3;
+   grid-row: 1 / 3;
+}
+
+#seccion .tile-2 img {
+    
+    /* height: 400px; */
+    border-radius: 50%;
+    object-fit: cover;
+}
+/* -------------------- */
+#posts {
+    padding: 10px;
+    background-color: rgb(230, 170, 180);
+    display: grid;
+    grid-template: repeat(2, 300px) / repeat(3, 350px);
+    gap: 10px;
+    justify-content: center;
+    align-content: center;
+}
+
+#posts .post{
+    display: grid;
+    align-content: end;
+    border-radius: 5px;
+    background-color: white;
+
+    background-size: cover;
+    background-position: center center;
+
+    overflow: hidden;
+}
+
+#posts .post a {
+    color: #ccc;
+    text-decoration: none;
+}
+#posts .post .tile {
+    background-color: rgb(213, 90, 110);
+    color: white;
+    padding: 10px;
+}
+
+#posts .post .title:hover{
+    background-color: white;
+    color: rgb(213, 90, 110);
+}
+
+#posts .post.post-1 {
+    background-image: url(imagenes/post1.jpg);
+}
+#posts .post.post-2 {
+    background-image: url(imagenes/post2.jpg);
+}
+#posts .post.post-3 {
+    background-image: url(imagenes/post3.jpg);
+}
+#posts .post.post-4 {
+    background-image: url(imagenes/post4.jpg);
+}
+#posts .post.post-5 {
+    background-image: url(imagenes/post5.jpg);
+}
+#posts .post.post-6 {
+    background-image: url(imagenes/post6.jpg)
+}
+
+/* ----------------------- */
+#contacto {
+    background-color: #f19a9a;
+    display: grid;
+    grid-template: auto 100px / 700px;
+    justify-content: center;
+    align-content: center;
+    box-sizing: border-box;
+}
+
+#contacto form {
+    padding: 20px;
+    color: rgb(10, 10, 10);
+    display: grid;
+    gap: 15px;
+    grid-template: auto / auto;
+    align-items: center;
+    box-sizing: border-box;
+}
+#contacto form input {
+    padding: 20px 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+}
+
+/************************************/
+
+
+/* Estilos generales */
+body {
+    font-family:  Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+/* h1 {
+    color: #1b046e;
+} */
+
+/* Estilos del formulario */
+form {
+    background-color:#f2f2f2;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, checkbox {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    background-color: rgb(36, 236, 220);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para el resultado */
+#resultado {
+    font-weight: bold;
+    margin-top: 20px;
+}
+/* Estilo para los elementos de entrada (inputs) */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombreado */
+}
+
+
+@media screen and (max-width: 1090px) {
+    #posts {
+        grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+    }
+    
+}
+
+@media screen and (max-width: 800px) {
+    #menu {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: 
+            "inicio nosotros"
+            "ubicacion contacto";
+    }
+    
+    #menu .tile:hover .front {
+        margin-top: -50vh;
+    }
+
+
+    #seccion {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 20px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    #seccion .tile img {
+        width: 70%;
+    }  
+
+    #seccion .tile-2 {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+    }
+    #seccion .tile-1 {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+    #seccion .tile-3 {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+    #seccion .tile-4 {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    #seccion .tile-5 {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+
+    #contacto {
+        padding: 0 20px;
+        grid-template: auto 100px / 100px;
+
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    #menu {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas: 
+            "inicio"
+            "nosotros"
+            "ubicacion"
+            "contacto";
+    }
+
+    #menu .tile:hover .front {
+        margin-top: -25vh;
+    }
+    
+    #seccion {
+        display: grid;
+        grid-template: auto / auto;
+        /* gap: 20px;
+        padding: 20px; */
+    }
+
+    #seccion .tile-2 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    #seccion .tile-1 {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+    #seccion .tile-3 {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    #seccion .tile-4 {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+    }
+    #seccion .tile-5 {
+        grid-column: 1 / 2;
+        grid-row: 5 / 6;
+    }
+
+    #posts {
+        grid-template: repeat(6, 1fr) / repeat(1, 1fr);
+    }
+
+    #posts .title {
+        display: grid;
+    }
+}
+/* Estilo del iframe */
+.iframe-container {
+    margin: 20px;
+    width: 50%; /* Establece el ancho en 50% */
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: inline-block; /* Permite que el ancho se ajuste al contenido */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+iframe {
+    border: none;
+    width: 100%;
+}
+
+
+/* Estilo del contenido principal */
+main {
+    padding: 20px;
+}
+
+/* Estilo de los párrafos */
+p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+footer {
+    
+    height: auto;
+    width: 100%;
+    padding-top: 20px;
+        /*background-color:  rgb(153, 95, 141);*/
+    color: coral;
+    text-align: center
+    
+  }
+  
+  .footer-contenido h3 {
+    font-size: 2.1rem;
+    font-weight: 500;
+    line-height: 1rem;
+  }
+  
+  .footer-contenido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-contenido p {
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 12px;
+    color:  coral;
+  }
+  
+  .redes {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 1rem 0;
+  }
+  .redes li {
+    margin: 0 10px;
+  }
+  .redes a {
+    text-decoration: none;
+    color: coral;
+    border: 1.1px solid  coral;
+    padding: 5px;
+    border-radius: 50%;
+  }
+  .redes a i {
+    font-size: 1.0rem;
+    width: 20px;
+    transition: color 0.4s ease, transform 0.4s;
+  }
+  .redes a:hover i {
+    color: rgb(85, 28, 7);
+    transform: rotate(360deg);
+  }
+/* Estilo para la sección con ID "maestras" */
+#maestras {
+    background-color: #F5F5DC; /* Color de fondo beige pastel */
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.maestra {
+    text-align: center;
+    background-color: #FFDAB9; /* Color de fondo melocotón pastel */
+    padding: 20px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    width: 30%; /* Ancho de cada sección de maestra */
+    margin: 10px;
+}
+
+.maestra img {
+    max-width: 100%;
+   
+}
+
+.maestra h2 {
+    font-size: 24px;
+    color: #000; /* Color del texto en negro */
+    margin: 10px 0;
+}
+
+.maestra p {
+    font-size: 16px;
+    color: #333; /* Color del texto un poco más oscuro que el fondo */
+
+    img[src="maestra2.jpg"] {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+ 
+        
